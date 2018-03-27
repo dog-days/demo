@@ -1,46 +1,15 @@
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
 @keyframes spin {
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes zoomIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-            transform: scale3d(0.3, 0.3, 0.3);
-  }
-  50% {
-    opacity: 1;
+    transform: rotate(360deg);
   }
 }
 @keyframes zoomIn {
   from {
     opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-            transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
   }
   50% {
     opacity: 1;
-  }
-}
-@-webkit-keyframes zoomOut {
-  from {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-            transform: scale3d(0.3, 0.3, 0.3);
-  }
-  to {
-    opacity: 0;
   }
 }
 @keyframes zoomOut {
@@ -49,19 +18,10 @@
   }
   50% {
     opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-            transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
   }
   to {
     opacity: 0;
-  }
-}
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 @keyframes fadeIn {
@@ -70,14 +30,6 @@
   }
   to {
     opacity: 1;
-  }
-}
-@-webkit-keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
   }
 }
 @keyframes fadeOut {
@@ -189,32 +141,26 @@ button {
   /*transform: translate(-50%, -50%);*/
 }
 .html5-player-slider-onenter-rail {
-  -webkit-transform: scaleY(0.6);
-      -ms-transform: scaleY(0.6);
-          transform: scaleY(0.6);
+  -ms-transform: scaleY(0.6);
+      transform: scaleY(0.6);
 }
 .html5-player-slider-onenter-rail .html5-player-slider-circle {
   display: none;
-  -webkit-animation: zoomOut 0.2s;
-          animation: zoomOut 0.2s;
+  animation: zoomOut 0.2s;
 }
 .html5-player-slider-onenter-rail:hover {
-  -webkit-transform: none;
-      -ms-transform: none;
-          transform: none;
+  -ms-transform: none;
+      transform: none;
 }
 .html5-player-slider-onenter-rail:hover .html5-player-slider-circle {
   display: block;
-  -webkit-animation: zoomIn 0.2s;
-          animation: zoomIn 0.2s;
+  animation: zoomIn 0.2s;
 }
 .html5-player-fade-in {
-  -webkit-animation: fadeIn 0.9s;
-          animation: fadeIn 0.9s;
+  animation: fadeIn 0.9s;
 }
 .html5-player-fade-out {
-  -webkit-animation: fadeOut 0.9s;
-          animation: fadeOut 0.9s;
+  animation: fadeOut 0.9s;
 }
 .html5-player-show.html5-player-show {
   visibility: visible;
@@ -238,6 +184,7 @@ button {
 .html5-player-tag {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 .html5-player-tag-stretching-uniform {
   -o-object-fit: contain;
@@ -299,8 +246,7 @@ button {
   color: #fff;
 }
 .html5-player-loading-icon {
-  -webkit-animation: spin 1.5s linear infinite;
-          animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
   cursor: default;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -323,19 +269,15 @@ button {
   z-index: 10000;
   width: 100%;
   bottom: 0;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
 }
 .html5-player-button-container {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
   width: 100%;
   padding: 0px 10px;
 }
@@ -395,9 +337,8 @@ button {
   text-align: center;
   background-color: #000;
   padding: 20px;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
   font: 600 14px/1.35 Arial, Helvetica, sans-serif;
 }
 .html5-player-reload {
@@ -418,10 +359,9 @@ button {
   padding: 5px 5px;
   font-family: Arial, Helvetica, sans-serif;
   color: #000;
-  -webkit-animation: zoomIn 0.2s;
-          animation: zoomIn 0.2s;
+  animation: zoomIn 0.2s;
 }
-.html5-player-captions-text {
+.html5-player-subtitle-text {
   position: absolute;
   bottom: 0;
   line-height: 1.5;
@@ -430,23 +370,22 @@ button {
   left: 50%;
   width: 75%;
   transition: margin-bottom 0.25s cubic-bezier(0, 0, 0.2, 1), margin-top 0.25s cubic-bezier(0, 0, 0.2, 1);
-  -webkit-transform: translate(-50%, 0%);
-      -ms-transform: translate(-50%, 0%);
-          transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+      transform: translate(-50%, 0%);
   text-align: center;
   word-wrap: normal;
 }
-.html5-player-captions-text > span {
+.html5-player-subtitle-text > span {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 2px;
   font-size: 16px;
   color: #fff;
   font-family: 'YouTube Noto', Roboto, 'Arial Unicode Ms', Arial, Helvetica, Verdana, 'PT Sans Caption', sans-serif;
 }
-.html5-player-captions-text-user-active {
+.html5-player-subtitle-text-user-active {
   bottom: 60px;
 }
-.html5-player-captions-text-user-inactive {
+.html5-player-subtitle-text-user-inactive {
   bottom: 25px;
 }
 .html5-player-broken {
@@ -466,16 +405,15 @@ button {
 .html5-player-track-history-slider .html5-player-slider-rail {
   height: 20px;
   background-color: #7ec2f3;
-  -webkit-transform: scaleY(1);
-      -ms-transform: scaleY(1);
-          transform: scaleY(1);
+  -ms-transform: scaleY(1);
+      transform: scaleY(1);
 }
 .html5-player-track-history-slider .html5-player-for-tooltip {
   padding: 18px 0px;
 }
 .html5-player-title {
   position: absolute;
-  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.02) 100%);
   top: 0;
   left: 0;
   width: 100%;
@@ -484,27 +422,32 @@ button {
   z-index: 1000;
   color: #fff;
 }
-.html5-player-setting-container,
+.html5-player-setting-list,
 .html5-player-list-container,
 .html5-player-rate-container {
   font-size: 12px;
   text-align: left;
   background-color: #191919;
 }
-.html5-player-setting-container li,
+.html5-player-setting-list li,
 .html5-player-list-container li,
 .html5-player-rate-container li {
   height: 30px;
   line-height: 30px;
   padding: 0px 10px;
   color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  text-align: left;
 }
-.html5-player-setting-container li:hover,
+.html5-player-setting-list li:hover,
 .html5-player-list-container li:hover,
 .html5-player-rate-container li:hover {
   background-color: #303030;
 }
-.html5-player-setting-container li.html5-player-rate-title,
+.html5-player-setting-list li.html5-player-list-title,
+.html5-player-list-container li.html5-player-list-title,
+.html5-player-rate-container li.html5-player-list-title,
+.html5-player-setting-list li.html5-player-rate-title,
 .html5-player-list-container li.html5-player-rate-title,
 .html5-player-rate-container li.html5-player-rate-title {
   height: 35px;
@@ -512,30 +455,39 @@ button {
   border-bottom: 1px solid rgba(204, 204, 204, 0.2);
   margin-bottom: 5px;
 }
-.html5-player-setting-container li.html5-player-rate-title:hover,
+.html5-player-setting-list li.html5-player-list-title:hover,
+.html5-player-list-container li.html5-player-list-title:hover,
+.html5-player-rate-container li.html5-player-list-title:hover,
+.html5-player-setting-list li.html5-player-rate-title:hover,
 .html5-player-list-container li.html5-player-rate-title:hover,
 .html5-player-rate-container li.html5-player-rate-title:hover {
   background-color: rgba(25, 25, 25, 0.8);
 }
+.html5-player-list-selected,
 .html5-player-rate-selected {
   background-color: #303030;
 }
-.html5-player-setting {
+.html5-player-setting-list {
   width: 200px;
+  position: relative;
+  right: 40px;
+  background-color: #191919;
 }
-.html5-player-setting .html5-player-right-icon {
+.html5-player-setting-list .html5-player-right-icon {
   font-size: 12px;
   margin-left: 5px;
 }
+.html5-player-list-container,
 .html5-player-rate-container {
-  width: 70px;
   text-align: center;
 }
+.html5-player-list-container .html5-player-left-icon,
 .html5-player-rate-container .html5-player-left-icon {
   margin-right: 5px;
   font-size: 12px;
   margin-left: -5px;
 }
+.html5-player-common-button,
 .html5-player-rate-button {
   vertical-align: unset;
   background: rgba(255, 255, 255, 0.8);
@@ -569,9 +521,8 @@ button {
   left: 50%;
   color: #fff;
   padding: 5px;
-  -webkit-transform: translate(-50%, 0%);
-      -ms-transform: translate(-50%, 0%);
-          transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+      transform: translate(-50%, 0%);
 }
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -620,29 +571,16 @@ button {
   width: 54px;
 }
 .App-logo {
-  -webkit-animation: App-logo-spin infinite 20s linear;
-          animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 20s linear;
   height: 40px;
   margin: -10px 0 0 -10px;
 }
-@-webkit-keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
 @keyframes App-logo-spin {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 .player-container {
@@ -689,44 +627,33 @@ input:hover {
   height: 100%;
   width: 100%;
   cursor: default;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  -ms-flex-flow: column;
+      flex-flow: column;
 }
 .camera-control-container > div {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
+  -ms-flex: 1;
+      flex: 1;
   display: -ms-flexbox;
   display: flex;
 }
 .camera-control-container > div > div {
   cursor: pointer;
   position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
+  -ms-flex: 1;
+      flex: 1;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 .camera-control-top-left:hover > span {
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s;
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  animation: fadeIn 0.5s;
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
   width: 40px;
   height: 40px;
   position: relative;
@@ -755,11 +682,9 @@ input:hover {
   border-bottom-color: #108ee9;
 }
 .camera-control-top-middle:hover > span {
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s;
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
+  animation: fadeIn 0.5s;
+  -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
   width: 40px;
   height: 40px;
   position: relative;
@@ -788,11 +713,9 @@ input:hover {
   border-bottom-color: #108ee9;
 }
 .camera-control-top-right:hover > span {
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  animation: fadeIn 0.5s;
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
   width: 40px;
   height: 40px;
   position: relative;
@@ -821,11 +744,9 @@ input:hover {
   border-bottom-color: #108ee9;
 }
 .camera-control-middle-left:hover > span {
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s;
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  animation: fadeIn 0.5s;
+  -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
   width: 40px;
   height: 40px;
   position: relative;
@@ -862,15 +783,12 @@ input:hover {
 }
 .camera-control-middle-middle.camera-control-middle-middle:hover > svg {
   display: block;
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
 }
 .camera-control-middle-right:hover > span {
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s;
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
+  animation: fadeIn 0.5s;
+  -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
   width: 40px;
   height: 40px;
   position: relative;
@@ -899,11 +817,9 @@ input:hover {
   border-bottom-color: #108ee9;
 }
 .camera-control-bottom-left:hover > span {
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s;
-  -webkit-transform: rotate(-135deg);
-      -ms-transform: rotate(-135deg);
-          transform: rotate(-135deg);
+  animation: fadeIn 0.5s;
+  -ms-transform: rotate(-135deg);
+      transform: rotate(-135deg);
   width: 40px;
   height: 40px;
   position: relative;
@@ -932,11 +848,9 @@ input:hover {
   border-bottom-color: #108ee9;
 }
 .camera-control-bottom-middle:hover > span {
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s;
-  -webkit-transform: rotate(-180deg);
-      -ms-transform: rotate(-180deg);
-          transform: rotate(-180deg);
+  animation: fadeIn 0.5s;
+  -ms-transform: rotate(-180deg);
+      transform: rotate(-180deg);
   width: 40px;
   height: 40px;
   position: relative;
@@ -965,11 +879,9 @@ input:hover {
   border-bottom-color: #108ee9;
 }
 .camera-control-bottom-right:hover > span {
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s;
-  -webkit-transform: rotate(135deg);
-      -ms-transform: rotate(135deg);
-          transform: rotate(135deg);
+  animation: fadeIn 0.5s;
+  -ms-transform: rotate(135deg);
+      transform: rotate(135deg);
   width: 40px;
   height: 40px;
   position: relative;
