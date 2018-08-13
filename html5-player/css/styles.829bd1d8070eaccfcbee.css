@@ -198,6 +198,10 @@ button {
   color: rgba(255, 255, 255, 0.8);
   background-color: #000000;
   overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .html5-player-tag {
   width: 100%;
@@ -406,12 +410,16 @@ button {
 .html5-player-subtitle-text-user-inactive {
   bottom: 25px;
 }
-.html5-player-broken {
+.html5-player-broken,
+.html5-player-hasvideo {
   position: absolute;
   z-index: 10000;
   background-color: #656565;
   width: 0%;
   height: 100%;
+}
+.html5-player-hasvideo {
+  background: none;
 }
 .html5-player-track-history-slider .html5-player-slider-circle,
 .html5-player-track-history-slider .html5-player-buffer {
@@ -617,6 +625,25 @@ button {
   color: #fff;
   cursor: pointer;
   right: -40px;
+}
+.html5-player-selection-left,
+.html5-player-selection-right {
+  cursor: ew-resize;
+  position: absolute;
+  z-index: 100000;
+  left: 0;
+  top: -5px;
+  width: 3px;
+  height: calc(100% + 5px);
+  background: #fff;
+}
+.html5-player-selection-right {
+  -ms-transform: translate(-50%, 0%);
+      transform: translate(-50%, 0%);
+}
+.html5-player-selection-left {
+  -ms-transform: translate(-50%, 0%);
+      transform: translate(-50%, 0%);
 }
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
